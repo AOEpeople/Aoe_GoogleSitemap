@@ -14,6 +14,13 @@ $installer->addAttribute('catalog_category', 'sitemap_exclude', array(
     'note'     => 'Exclude from xml sitemap generation',
     'default'  => 0
 ));
+
+$categories = Mage::getModel('catalog/category')->getCollection();
+foreach($categories as $category){
+    $category->setSitemapExclude(0);
+    $category->save();
+}
+
 $dbStorage = Mage::helper('core/file_storage_database')->getStorageDatabaseModel(); /* @var $dbStorage Mage_Core_Model_File_Storage_Database */
 $dbStorage->getDirectoryModel()->prepareStorage();
 $dbStorage->prepareStorage();
