@@ -33,11 +33,17 @@
                     <sitemap>Aoe_GoogleSitemap_Model_Sitemap</sitemap>
                 </rewrite>
             </sitemap>
+            <sitemap_resource>
+                <rewrite>
+                    <catalog_category>Aoe_GoogleSitemap_Model_Resource_Catalog_Category</catalog_category>
+                </rewrite>
+            </sitemap_resource>
         </models>
         <resources>
             <aoegooglesitemap_setup>
                 <setup>
                     <module>Aoe_GoogleSitemap</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
                 </setup>
                 <connection>
                     <use>core_setup</use>
