@@ -5,7 +5,6 @@ class Aoe_GoogleSitemap_Model_Resource_Catalog_Product extends Mage_Sitemap_Mode
     /**
      * Returns all store views within the same website excluding the given one
      *
-     * @author Benoît Xylo
      */
     protected function _getAllWebsiteStoresExcept($excludedStore) {
         $stores = array();
@@ -22,7 +21,6 @@ class Aoe_GoogleSitemap_Model_Resource_Catalog_Product extends Mage_Sitemap_Mode
      * Prepare a database query and fetch data containing language alternate
      * links for the store views different than given one
      *
-     * @author Benoît Xylo
      */
     public function getAlternateLinksCollection($store) {
 
@@ -46,8 +44,8 @@ class Aoe_GoogleSitemap_Model_Resource_Catalog_Product extends Mage_Sitemap_Mode
                 array('url' => 'request_path', 'store_id' => 'store_id')
             );
 
-        $this->_addFilter($storeId, 'visibility', Mage::getSingleton('catalog/product_visibility')->getVisibleInSiteIds(), 'in');
-        $this->_addFilter($storeId, 'status', Mage::getSingleton('catalog/product_status')->getVisibleStatusIds(), 'in');
+        $this->_addFilter($store->getId(), 'visibility', Mage::getSingleton('catalog/product_visibility')->getVisibleInSiteIds(), 'in');
+        $this->_addFilter($store->getId(), 'status', Mage::getSingleton('catalog/product_status')->getVisibleStatusIds(), 'in');
 
         $query = $this->_getWriteAdapter()->query($this->_select);
 

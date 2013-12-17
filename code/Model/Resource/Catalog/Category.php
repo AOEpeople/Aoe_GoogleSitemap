@@ -5,7 +5,6 @@ class Aoe_GoogleSitemap_Model_Resource_Catalog_Category extends Mage_Sitemap_Mod
     /**
      * Returns all store views within the same website excluding the given one
      *
-     * @author Benoît Xylo
      */
     protected function _getAllWebsiteStoresExcept($excludedStore) {
         $stores = array();
@@ -22,7 +21,6 @@ class Aoe_GoogleSitemap_Model_Resource_Catalog_Category extends Mage_Sitemap_Mod
      * Prepare a database query and fetch data containing language alternate
      * links for the store views different than given one
      *
-     * @author Benoît Xylo
      */
     public function getAlternateLinksCollection($store) {
 
@@ -40,8 +38,8 @@ class Aoe_GoogleSitemap_Model_Resource_Catalog_Category extends Mage_Sitemap_Mod
                 array('url' => 'request_path', 'store_id' => 'store_id')
             );
 
-        $this->_addFilter($storeId, 'is_active', 1);
-        $this->_addFilter($storeId, 'sitemap_exclude', 0);
+        $this->_addFilter($store->getId(), 'is_active', 1);
+        $this->_addFilter($store->getId(), 'sitemap_exclude', 0);
 
         $query = $this->_getWriteAdapter()->query($this->_select);
 
