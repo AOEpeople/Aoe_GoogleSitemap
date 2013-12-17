@@ -36,6 +36,7 @@
             <sitemap_resource>
                 <rewrite>
                     <catalog_category>Aoe_GoogleSitemap_Model_Resource_Catalog_Category</catalog_category>
+                    <catalog_product>Aoe_GoogleSitemap_Model_Resource_Catalog_Product</catalog_product>
                 </rewrite>
             </sitemap_resource>
         </models>
@@ -66,6 +67,10 @@
                 </sitemap_generate_valid_paths>
             </file>
         </general>
+        <sitemap>
+            <alternate_links>
+                <enabled>1</enabled>
+            </alternate_links>
+        </sitemap>
     </default>
-
 </config>
