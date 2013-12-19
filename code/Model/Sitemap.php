@@ -6,7 +6,6 @@ class Aoe_GoogleSitemap_Model_Sitemap extends Mage_Sitemap_Model_Sitemap {
 
     /**
      * Get local and base URL for given store ID
-     *
      */
     protected function _getStoreData($storeId) {
         if (null === $this->_stores) {
@@ -26,7 +25,6 @@ class Aoe_GoogleSitemap_Model_Sitemap extends Mage_Sitemap_Model_Sitemap {
 
     /**
      * Format alternate links from the links collection for given item (product or category)
-     *
      */
     protected function _getAlternateLinks($item, $alternateLinksCollection) {
         $xml = '';
@@ -67,7 +65,6 @@ class Aoe_GoogleSitemap_Model_Sitemap extends Mage_Sitemap_Model_Sitemap {
     /**
      * Protected "override" of parent's generateXml() method that includes
      * language alternate links in the sitemap feed
-     *
      */
     protected function _generateXml() {
         $io = new Varien_Io_File();
