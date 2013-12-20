@@ -20,6 +20,24 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </enabled>
+                        <hreflang>
+                            <label>Hreflang attribute value</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hreflang>
+                        <additionallinks>
+                            <label>Additional alternate links</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ additional link tags which will be added to each entry in the sitemap.
+                            Usefull when you have a store outside Mgento. e.g. &lt;link rel="alternate" href="http://shop.mydomain.com/" hreflang="ru-ru" /&gt; ]]></comment>
+                        </additionallinks>
                     </fields>
                 </alternate_links>
             </groups>

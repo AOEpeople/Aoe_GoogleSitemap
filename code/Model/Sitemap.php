@@ -31,10 +31,15 @@ class Aoe_GoogleSitemap_Model_Sitemap extends Mage_Sitemap_Model_Sitemap {
         if (array_key_exists($item->getId(), $alternateLinksCollection)) {
             foreach ($alternateLinksCollection[$item->getId()] as $storeId => $itemUrl) {
                 $xml .= sprintf('<xhtml:link rel="alternate" hreflang="%s" href="%s"/>',
-                    $this->_getStoreData($storeId)->getLocale(),
+                    Mage::getStoreConfig('sitemap/alternate_links/hreflang', $storeId),
                     htmlspecialchars($this->_getStoreData($storeId)->getBaseUrl() . $itemUrl)
-                );                
+                );
             }
+        }
+
+        $additionalLinks = trim(Mage::getStoreConfig('sitemap/alternate_links/additionallinks', $item->getStoreId()));
+        if (!empty($additionalLinks)) {
+            $xml .= $additionalLinks;
         }
         return $xml;
     }

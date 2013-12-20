@@ -70,6 +70,7 @@
         <sitemap>
             <alternate_links>
                 <enabled>1</enabled>
+                <hreflang>us-US</hreflang>
             </alternate_links>
         </sitemap>
     </default>
